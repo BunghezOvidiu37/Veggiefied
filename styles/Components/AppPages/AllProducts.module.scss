@@ -1,0 +1,70 @@
+@import "../../Settings/PositionsDefault.scss";
+@import "../../Settings/Buttons.scss";
+@import '../../Settings/Themes.scss';
+.container {
+  @include flex-column(center, center);
+  @include theme(url("https://res.cloudinary.com/dpvum48vk/image/upload/v1650314381/Themes/landing-bottom-white-green_apbv1g.svg"));
+  width: 100vw;
+  height: 100vh;
+  transition: 2s;
+
+//   &:hover{
+//       @include theme(url("https://res.cloudinary.com/dpvum48vk/image/upload/v1650314386/Themes/landing-bottom-white-blue_newx2g.svg"))
+//   }
+
+  &__loadProductsInfo {
+  }
+
+  &__products {
+    @include flex-row(center, flex-start);
+    gap: 30px;
+
+    .card{
+        @include flex-column(center, center);
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+        
+        picture{
+            max-width: 350px;
+
+            img{
+                width: 100%;
+                object-fit: cover;                
+            }
+        }
+
+        h1{
+            text-align: left;
+            justify-self: flex-start;
+            align-self: flex-start;
+            max-height: 40px;
+            overflow: hidden;
+        }
+
+        #descriptionContainer{
+            padding: 10px;
+            height: 100px;
+            overflow: hidden;
+            border: 2px solid red;
+            transition: 1s;
+            
+            &:hover{
+                height: 150px;
+            }
+        }
+
+
+        button{
+            @include button-green($button-primary-color, white);
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+
+        }
+    }
+  }
+}

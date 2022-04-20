@@ -1,0 +1,157 @@
+@import "../../Settings/PositionsDefault.scss";
+
+$mouth-and-ears: #ffa9aa;
+$grass: #567d46;
+$spots: #000000;
+$skin: #ffffff;
+
+@mixin grass {
+  width: 150px;
+  height: 20px;
+  position: absolute;
+  bottom: -20px;
+  border-top: 3px solid green;
+  border-radius: 50%;
+}
+
+// @import "./NavigationStyles/Cow.module.scss";
+
+.cow {
+  @include flex-row(center, center);
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  &__head {
+    @include flex-row(center, center);
+    width: 95px;
+    height: 85px;
+    border: 2px solid $spots;
+    border-radius: 40%;
+    position: absolute;
+    background-color: $skin;
+    justify-content: space-evenly;
+    align-items: center;
+    // z-index: 22;
+    top: 40px;
+
+    .eyes {
+      width: 10px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $spots;
+      margin-bottom: 20px;
+    }
+
+    .earLeft {
+      width: 40px;
+      height: 20px;
+      position: absolute;
+      border: 2px solid $spots;
+      top: -6px;
+      left: -20px;
+      transform: rotate(40deg);
+      border-radius: 60%;
+      z-index: 0;
+      background-color: $skin;
+      border-right: 0px;
+
+      .innerEar {
+        width: 20px;
+        height: 10px;
+        background-color: $mouth-and-ears;
+        margin: 0 auto;
+        border-radius: 60%;
+        margin-top: 4px;
+      }
+    }
+
+    .earRight {
+      width: 40px;
+      height: 20px;
+      position: absolute;
+      border: 2px solid $spots;
+      top: -6px;
+      right: -20px;
+      transform: rotate(-40deg);
+      border-radius: 60%;
+      z-index: 0;
+      background-color: $skin;
+      border-left: 0px;
+
+      .innerEar {
+        width: 20px;
+        height: 10px;
+        background-color: $mouth-and-ears;
+        margin: 0 auto;
+        border-radius: 60%;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &__mouth {
+    width: 130px;
+    height: 70px;
+    position: relative;
+    margin-bottom: -75px;
+    background-color: $mouth-and-ears;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid $spots;
+    animation: chew 2s infinite ease-in-out;
+
+    @keyframes chew {
+      0% {
+        border-radius: 50% 40% 50% 40%;
+      }
+      50% {
+        border-radius: 50% 40% 40% 50%;
+      }
+      100% {
+        border-radius: 50% 40% 50% 40%;
+      }
+    }
+
+    .grassOne {
+      @include grass;
+      animation: grassMovement 1s linear infinite normal;
+    }
+    @keyframes grassMovement {
+      0% {
+        border-radius: 50% 40% 50% 40%;
+      }
+      50% {
+        border-radius: 20% 40% 10% 50%;
+      }
+      100% {
+        border-radius: 50% 40% 50% 40%;
+      }
+    }
+    .grassTwo {
+      @include grass;
+      animation: grassMovement 3s linear infinite normal;
+      transform: rotate(5deg);
+    }
+    @keyframes grassMovement {
+      0% {
+        border-radius: 50% 40% 50% 30%;
+      }
+      50% {
+        border-radius: 20% 40% 10% 40%;
+      }
+      100% {
+        border-radius: 50% 40% 50% 30%;
+      }
+    }
+
+    .nostrils {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      background-color: $spots;
+      border-radius: 50%;
+    }
+  }
+}

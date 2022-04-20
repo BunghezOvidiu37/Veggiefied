@@ -1,0 +1,76 @@
+@import "../../Settings/Colors.scss";
+@import "../../Settings/PositionsDefault.scss";
+
+.container {
+  @include flex-row(center, center);
+  width: 100vw;
+  height: 100vh;
+  background: url("../../../assets/Navigation-Images/background-add-product.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 0;
+  
+
+  &__wrapper {
+    @include flex-column(center, center);
+    width: 100%;
+    height: 60%;
+    // background: url("../../../assets/form-background-green.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+
+
+    .form {
+      @include flex-column(center, center);
+      background-color: rgba(0, 0, 0, 0.452);
+      border-radius: 10px;
+      gap: 20px;
+      max-width: 500px;
+      width: 100%;
+      height: 400px;
+      animation: formContainerUp 0.5s forwards;
+
+      @keyframes formContainerUp {
+        0% {
+          filter: blur(20px);
+        }
+        100% {
+          filter: blur(0px);
+        }
+      }
+
+      input {
+        border-radius: 5px;
+        max-width: 500px;
+        width: 300px;
+        height: 40px;
+        transition: 0.5s;
+        padding-left: 10px;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.685);
+
+        &::placeholder {
+          text-align: left;
+          width: 100%;
+          height: 100%;
+          text-align: left;
+        }
+
+        &:focus {
+          border-radius: 30px;
+          width: 100%;
+          outline: none;
+          border: 1px solid black;
+          background-color: white;
+        }
+      }
+
+      #formSubmit {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}

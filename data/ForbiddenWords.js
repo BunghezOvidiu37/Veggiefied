@@ -1,0 +1,1 @@
+export const forbiddenWords = /(?:^|(?<= ))(pui|carne|vita|oaie|porc)(?:(?= )|$)/

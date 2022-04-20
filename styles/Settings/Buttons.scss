@@ -1,0 +1,14 @@
+$button-primary-color: #05b963;
+
+@mixin button-green($background, $text-color) {
+    background: $background;
+    color: $text-color;
+    border: none;
+    border-radius: 0px;
+    font-size: 20px;
+
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}

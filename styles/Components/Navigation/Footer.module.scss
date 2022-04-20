@@ -1,0 +1,8 @@
+@import "../../Settings/PositionsDefault.scss";
+
+.footerContainer {
+  @include flex-row(center, center);
+  background-color: black;
+  width: 100vw;
+  height: 200px;
+}
